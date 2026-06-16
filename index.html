@@ -1,0 +1,2832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ignatious Glasswork — Premium frameless glass balustrades, custom shower enclosures, glass doors, and aluminium window systems across South Africa. Engineering luxury, precision crafted.">
+  <meta name="keywords" content="Frameless glass balustrades, custom glass balustrade installers, bespoke shower enclosures, frameless shower doors, sliding glass doors, aluminium window installers, Gauteng, South Africa">
+  <meta name="author" content="Ignatious Glasswork">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Ignatious Glasswork — Premium Glass & Aluminium Installations">
+  <meta property="og:description" content="Engineering luxury frameless balustrades, customized glass showers, and aluminum frame systems across South Africa.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <title>Ignatious Glasswork — Premium Glass & Aluminium Installations | South Africa</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --ink: #0c0c0e;
+      --carbon: #18181c;
+      --smoke: #2a2a32;
+      --steel: #8a8a9a;
+      --mist: #c8c8d0;
+      --frost: #f5f5f7;
+      --white: #ffffff;
+      --accent: #d4e4f7;
+      --accent-dark: #a8c4e8;
+      
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, sans-serif;
+      
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      
+      --space-xs: clamp(0.5rem, 1vw, 1rem);
+      --space-sm: clamp(1rem, 2vw, 2rem);
+      --space-md: clamp(2rem, 4vw, 4rem);
+      --space-lg: clamp(4rem, 8vw, 8rem);
+      --space-xl: clamp(6rem, 12vw, 14rem);
+    }
+    
+    html { 
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    body {
+      background: var(--ink);
+      color: var(--frost);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    ::selection {
+      background: var(--accent);
+      color: var(--ink);
+    }
+    
+    /* ═══════════════════════════════════════════
+       TYPOGRAPHY
+    ═══════════════════════════════════════════ */
+    .display-hero {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 10vw, 9rem);
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+    }
+    
+    .display-xl {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 6vw, 6rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+    
+    .display-lg {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+    }
+    
+    .display-md {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+    
+    .body-lg {
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.7;
+    }
+    
+    .body-md {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    .label {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    
+    .label-lg {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    
+    .italic { font-style: italic; }
+    .accent-text { color: var(--accent-dark); }
+    
+    /* ═══════════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════════ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-sm) var(--space-md);
+      transition: all 0.5s var(--ease-out-expo);
+    }
+    
+    .nav.scrolled {
+      padding: var(--space-xs) var(--space-md);
+      background: rgba(12, 12, 14, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      text-decoration: none;
+      color: var(--white);
+    }
+    
+    .nav-logo-img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--white);
+    }
+    
+    .nav-cta {
+      padding: 10px 24px !important;
+      border: 1px solid rgba(255,255,255,0.15) !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .nav-cta:hover {
+      border-color: var(--accent-dark) !important;
+      background: rgba(212, 228, 247, 0.08) !important;
+    }
+    
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+    
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--white);
+      transition: all 0.3s ease;
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--ink);
+      z-index: 999;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-sm);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    
+    .mobile-menu.open {
+      display: flex;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    .mobile-menu a {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--frost);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .mobile-menu a:hover {
+      color: var(--accent-dark);
+    }
+    
+    .mobile-menu-close {
+      position: absolute;
+      top: var(--space-sm);
+      right: var(--space-md);
+      background: none;
+      border: none;
+      color: var(--frost);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 8px;
+    }
+    
+    /* ═══════════════════════════════════════════
+       HERO SECTION
+    ═══════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--space-xl) var(--space-md) var(--space-lg);
+      overflow: hidden;
+    }
+    
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+    
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(12, 12, 14, 0.85) 0%,
+        rgba(12, 12, 14, 0.45) 40%,
+        rgba(12, 12, 14, 0.15) 100%
+      );
+      z-index: -1;
+    }
+    
+    .hero-content {
+      max-width: 1000px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-eyebrow {
+      display: block;
+      margin-bottom: var(--space-sm);
+      color: var(--steel);
+    }
+    
+    .hero-title {
+      margin-bottom: var(--space-md);
+    }
+    
+    .hero-body {
+      max-width: 540px;
+      margin-bottom: var(--space-md);
+      color: var(--mist);
+    }
+    
+    .hero-actions {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: var(--white);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: all 0.4s var(--ease-out-expo);
+      border: 1px solid var(--white);
+    }
+    
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--white);
+    }
+    
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--frost);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.4s var(--ease-out-expo);
+    }
+    
+    .btn-ghost:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.05);
+    }
+    
+    .hero-scroll {
+      position: absolute;
+      bottom: var(--space-lg);
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      color: var(--steel);
+      z-index: 10;
+    }
+    
+    .hero-scroll-line {
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, var(--accent-dark), transparent);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-scroll-line::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 30%;
+      background: var(--accent-dark);
+      animation: scrollLine 1.5s ease-in-out infinite;
+    }
+    
+    .hero-scroll-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    
+    .hero-scroll-arrow span {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid var(--accent-dark);
+      border-bottom: 2px solid var(--accent-dark);
+      transform: rotate(45deg);
+      opacity: 0.6;
+    }
+    
+    .hero-scroll-arrow span:nth-child(1) { animation-delay: 0s; }
+    .hero-scroll-arrow span:nth-child(2) { animation-delay: 0.15s; opacity: 0.4; }
+    .hero-scroll-arrow span:nth-child(3) { animation-delay: 0.3s; opacity: 0.2; }
+    
+    .hero-scroll-text {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--steel);
+      margin-top: 8px;
+    }
+    
+    @keyframes scrollLine {
+      0% { transform: translateY(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(400%); opacity: 0; }
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+    
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.2); }
+    }
+    
+    /* ═══════════════════════════════════════════
+       TRUST STRIP
+    ═══════════════════════════════════════════ */
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    
+    .trust-item {
+      padding: var(--space-md) var(--space-sm);
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    
+    .trust-item:last-child {
+      border-right: none;
+    }
+    
+    .trust-number {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    
+    .trust-label {
+      color: var(--steel);
+      margin-bottom: 4px;
+    }
+    
+    .trust-desc {
+      font-size: 0.8rem;
+      color: var(--steel);
+      opacity: 0.7;
+    }
+    
+    /* ═══════════════════════════════════════════
+       BENEFITS SECTION
+    ═══════════════════════════════════════════ */
+    .benefits {
+      padding: var(--space-xl) var(--space-md);
+    }
+    
+    .benefits-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .benefits-title {
+      max-width: 500px;
+    }
+    
+    .benefits-intro {
+      display: flex;
+      align-items: flex-end;
+      color: var(--steel);
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-sm);
+    }
+    
+    .benefit-card {
+      padding: var(--space-md);
+      background: var(--carbon);
+      border: 1px solid rgba(255,255,255,0.04);
+      transition: all 0.5s var(--ease-out-expo);
+    }
+    
+    .benefit-card:hover {
+      background: var(--smoke);
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.08);
+    }
+    
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-sm);
+      color: var(--accent-dark);
+      border: 1px solid rgba(212, 228, 247, 0.15);
+      border-radius: 50%;
+      transition: all 0.4s var(--ease-out-expo);
+    }
+    
+    .benefit-card:hover .benefit-icon {
+      background: var(--accent-dark);
+      color: var(--ink);
+      transform: scale(1.05);
+    }
+    
+    .benefit-title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: var(--space-xs);
+    }
+    
+    .benefit-desc {
+      color: var(--steel);
+      font-size: 0.9rem;
+    }
+    
+    /* ═══════════════════════════════════════════
+       SERVICES LIST
+    ═══════════════════════════════════════════ */
+    .services-list-section {
+      padding: var(--space-xl) var(--space-md);
+      background: var(--carbon);
+    }
+    
+    .services-list-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: var(--space-lg);
+      gap: var(--space-md);
+    }
+    
+    .services-list-items {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .service-list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-md) 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-decoration: none;
+      color: var(--frost);
+      transition: all 0.4s var(--ease-out-expo);
+      cursor: pointer;
+    }
+    
+    .service-list-item:last-child {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    .service-list-item:hover {
+      padding-left: var(--space-sm);
+      background: rgba(255,255,255,0.02);
+    }
+    
+    .service-list-left {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    
+    .service-list-num {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      color: var(--steel);
+      min-width: 40px;
+    }
+    
+    .service-list-name {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 300;
+    }
+    
+    .service-list-tag {
+      display: none;
+      color: var(--steel);
+      font-size: 0.8rem;
+    }
+    
+    .service-list-arrow {
+      font-size: 1.2rem;
+      color: var(--steel);
+      transition: transform 0.4s var(--ease-out-expo);
+    }
+    
+    .service-list-item:hover .service-list-arrow {
+      transform: translateX(8px);
+      color: var(--accent-dark);
+    }
+    
+    /* ═══════════════════════════════════════════
+       SERVICE DETAIL PANELS
+    ═══════════════════════════════════════════ */
+    .services-detail {
+      padding: var(--space-xl) var(--space-md);
+    }
+    
+    .service-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+      align-items: center;
+    }
+    
+    .service-block.reverse {
+      direction: rtl;
+    }
+    
+    .service-block.reverse > * {
+      direction: ltr;
+    }
+    
+    .service-img {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+    }
+    
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-out-expo);
+    }
+    
+    .service-img:hover img {
+      transform: scale(1.05);
+    }
+    
+    .service-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(12,12,14,0.4), transparent);
+    }
+    
+    .service-content {
+      padding: var(--space-md);
+    }
+    
+    .service-bg-num {
+      position: absolute;
+      top: -20px;
+      right: -10px;
+      font-family: var(--serif);
+      font-size: 8rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+      pointer-events: none;
+    }
+    
+    .service-tag {
+      display: inline-block;
+      margin-bottom: var(--space-sm);
+      color: var(--accent-dark);
+    }
+    
+    .service-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 300;
+      margin-bottom: var(--space-sm);
+    }
+    
+    .service-desc {
+      color: var(--steel);
+      margin-bottom: var(--space-md);
+    }
+    
+    .service-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: var(--space-md);
+    }
+    
+    .service-spec {
+      font-size: 0.85rem;
+      color: var(--mist);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    
+    /* ═══════════════════════════════════════════
+       CLARITY SLIDER (Before/After)
+    ═══════════════════════════════════════════ */
+    .clarity-section {
+      padding: var(--space-xl) var(--space-md);
+      background: var(--carbon);
+    }
+    
+    .clarity-header {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+    
+    .clarity-header .section-title {
+      margin-top: var(--space-xs);
+    }
+    
+    .clarity-header .section-sub {
+      max-width: 500px;
+      margin: var(--space-sm) auto 0;
+      color: var(--steel);
+    }
+    
+    .clarity-slider-wrap {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      cursor: ew-resize;
+      user-select: none;
+    }
+    
+    .clarity-before,
+    .clarity-after {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .clarity-before {
+      background-image: url('assets/images/clarity-before.jpg');
+      filter: grayscale(1) brightness(0.7);
+    }
+    
+    .clarity-after {
+      background-image: url('assets/images/clarity-after.jpg');
+      clip-path: inset(0 50% 0 0);
+    }
+    
+    .clarity-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: var(--white);
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    
+    .clarity-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px;
+      height: 48px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--ink);
+      pointer-events: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .clarity-labels {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-lg);
+      margin-top: var(--space-sm);
+      color: var(--steel);
+    }
+    
+    /* ═══════════════════════════════════════════
+       PROCESS SECTION
+    ═══════════════════════════════════════════ */
+    .process-section {
+      padding: var(--space-xl) var(--space-md);
+    }
+    
+    .process-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-lg);
+      align-items: end;
+    }
+    
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-sm);
+    }
+    
+    .process-step {
+      padding: var(--space-md);
+      background: var(--carbon);
+      border: 1px solid rgba(255,255,255,0.04);
+      position: relative;
+    }
+    
+    .process-step::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent-dark);
+    }
+    
+    .process-num {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.1);
+      line-height: 1;
+      margin-bottom: var(--space-sm);
+    }
+    
+    .process-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: var(--space-xs);
+    }
+    
+    .process-body {
+      font-size: 0.85rem;
+      color: var(--steel);
+    }
+    
+    /* ═══════════════════════════════════════════
+       PORTFOLIO SECTION
+    ═══════════════════════════════════════════ */
+    .portfolio-section {
+      padding: var(--space-xl) var(--space-md);
+      background: var(--carbon);
+    }
+    
+    .portfolio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: var(--space-lg);
+      gap: var(--space-md);
+    }
+    
+    .portfolio-filters {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .filter-btn {
+      padding: 8px 20px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--steel);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--white);
+      color: var(--ink);
+      border-color: var(--white);
+    }
+    
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-sm);
+    }
+    
+    .portfolio-item {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-out-expo);
+    }
+    
+    .portfolio-item:hover img {
+      transform: scale(1.08);
+    }
+    
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(12,12,14,0.9), transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--space-sm);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+    
+    .portfolio-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      margin-bottom: 4px;
+    }
+    
+    .portfolio-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+    
+    .portfolio-spec {
+      font-size: 0.75rem;
+      color: var(--steel);
+    }
+    
+    /* ═══════════════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════════════ */
+    .testimonials-section {
+      padding: var(--space-xl) var(--space-md);
+      position: relative;
+    }
+    
+    .testimonials-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--smoke) 0%, var(--ink) 100%);
+      z-index: -1;
+    }
+    
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-sm);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-card {
+      padding: var(--space-md);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    
+    .testimonial-stars {
+      color: var(--accent-dark);
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: var(--space-sm);
+    }
+    
+    .testimonial-text {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: var(--space-md);
+      color: var(--mist);
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    
+    .testimonial-name {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    
+    .testimonial-role {
+      font-size: 0.75rem;
+      color: var(--steel);
+    }
+    
+    /* ═══════════════════════════════════════════
+       ABOUT SECTION
+    ═══════════════════════════════════════════ */
+    .about-section {
+      padding: var(--space-xl) var(--space-md);
+    }
+    
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+      align-items: center;
+    }
+    
+    .about-images {
+      position: relative;
+      aspect-ratio: 3/4;
+    }
+    
+    .about-img-main {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 70%;
+      height: 80%;
+      object-fit: cover;
+    }
+    
+    .about-img-secondary {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: 50%;
+      object-fit: cover;
+      border: 4px solid var(--ink);
+    }
+    
+    .about-content {
+      padding: var(--space-md) 0;
+    }
+    
+    .about-title {
+      margin-bottom: var(--space-md);
+    }
+    
+    .about-body {
+      color: var(--steel);
+      margin-bottom: var(--space-md);
+    }
+    
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+    
+    .about-feature {
+      padding: var(--space-sm);
+      background: var(--carbon);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    
+    .about-feature-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    
+    .about-feature-desc {
+      font-size: 0.8rem;
+      color: var(--steel);
+    }
+    
+    /* ═══════════════════════════════════════════
+       FAQ SECTION
+    ═══════════════════════════════════════════ */
+    .faq-section {
+      padding: var(--space-xl) var(--space-md);
+      background: var(--carbon);
+    }
+    
+    .faq-header {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+    
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    .faq-trigger {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-md) 0;
+      background: none;
+      border: none;
+      color: var(--frost);
+      cursor: pointer;
+      text-align: left;
+    }
+    
+    .faq-question {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+    
+    .faq-icon {
+      font-size: 1.5rem;
+      color: var(--steel);
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+    
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      color: var(--steel);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    
+    .faq-item.open .faq-body {
+      max-height: 300px;
+      padding-bottom: var(--space-md);
+    }
+    
+    
+    
+    /* ═══════════════════════════════════════════
+       CONTACT SECTION
+    ═══════════════════════════════════════════ */
+    .contact-section {
+      padding: var(--space-xl) var(--space-md);
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    
+    .contact-info {
+      padding: var(--space-md) 0;
+    }
+    
+    .contact-info .section-title {
+      margin-bottom: var(--space-md);
+    }
+    
+    .contact-desc {
+      color: var(--steel);
+      margin-bottom: var(--space-md);
+    }
+    
+    .contact-rows {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-sm);
+      background: var(--carbon);
+      border: 1px solid rgba(255,255,255,0.04);
+      text-decoration: none;
+      color: var(--frost);
+      transition: all 0.3s ease;
+    }
+    
+    .contact-row:hover {
+      background: var(--smoke);
+      border-color: rgba(255,255,255,0.08);
+    }
+    
+    .contact-row-left h4 {
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+    
+    .contact-row-left p {
+      font-size: 0.9rem;
+      color: var(--steel);
+    }
+    
+    .contact-row-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--steel);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-row:hover .contact-row-icon {
+      color: var(--accent-dark);
+      border-color: var(--accent-dark);
+    }
+    
+    .contact-form {
+      background: var(--carbon);
+      padding: var(--space-md);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    
+    .contact-form-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: var(--space-md);
+    }
+    
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-sm);
+    }
+    
+    .contact-form-full {
+      grid-column: span 2;
+    }
+    
+    .contact-form-buttons {
+      grid-column: span 2;
+      display: flex;
+      gap: var(--space-sm);
+      padding-top: var(--space-sm);
+    }
+    
+    .btn-whatsapp,
+    .btn-email {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.4s var(--ease-out-expo);
+      border: 1px solid;
+    }
+    
+    .btn-whatsapp {
+      background: #25D366;
+      color: var(--white);
+      border-color: #25D366;
+    }
+    
+    .btn-whatsapp:hover {
+      background: #128C7E;
+      border-color: #128C7E;
+      transform: translateY(-2px);
+    }
+    
+    .btn-email {
+      background: transparent;
+      color: var(--frost);
+      border-color: rgba(255,255,255,0.15);
+    }
+    
+    .btn-email:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-2px);
+    }
+    
+    .contact-row-highlight {
+      background: rgba(37, 211, 102, 0.08);
+      border-color: rgba(37, 211, 102, 0.2);
+    }
+    
+    .contact-row-highlight:hover {
+      background: rgba(37, 211, 102, 0.15);
+      border-color: rgba(37, 211, 102, 0.4);
+    }
+    
+    .contact-row-icon-highlight {
+      background: #25D366;
+      color: var(--white);
+      border-color: #25D366;
+    }
+    
+    .contact-row-highlight:hover .contact-row-icon-highlight {
+      background: #128C7E;
+      border-color: #128C7E;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-form-buttons {
+        flex-direction: column;
+      }
+    }
+    
+    /* ═══════════════════════════════════════════
+       MAP SECTION
+    ═══════════════════════════════════════════ */
+    .map-section {
+      padding: var(--space-md) var(--space-md);
+      background: var(--carbon);
+    }
+    
+    .map-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 21/9;
+      overflow: hidden;
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(1) invert(1) opacity(0.6);
+    }
+    
+    /* ═══════════════════════════════════════════
+       FINAL CTA SECTION
+    ═══════════════════════════════════════════ */
+    .final-cta {
+      padding: var(--space-xl) var(--space-md);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .final-cta-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
+      z-index: -1;
+    }
+    
+    .final-cta .section-title {
+      color: var(--ink);
+      margin-bottom: var(--space-md);
+    }
+    
+    .final-cta .section-sub {
+      max-width: 500px;
+      margin: 0 auto var(--space-md);
+      color: rgba(12, 12, 14, 0.7);
+    }
+    
+    .final-cta .btn-primary {
+      background: var(--ink);
+      color: var(--frost);
+      border-color: var(--ink);
+    }
+    
+    .final-cta .btn-primary:hover {
+      background: transparent;
+      color: var(--ink);
+    }
+    
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    .footer {
+      padding: var(--space-lg) var(--space-md);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .footer-brand-about {
+      color: var(--steel);
+      font-size: 0.9rem;
+      max-width: 300px;
+      margin-top: var(--space-sm);
+    }
+    
+    .footer-col h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--steel);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .footer-col ul {
+      list-style: none;
+    }
+    
+    .footer-col li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-col a {
+      color: var(--mist);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-col a:hover {
+      color: var(--accent-dark);
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+    
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--frost);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
+    
+    .footer-social a:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      color: var(--ink);
+    }
+    
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: var(--space-md);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: var(--steel);
+      font-size: 0.8rem;
+    }
+    
+    .powered-by {
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    
+    .powered-by strong {
+      font-weight: 600;
+      color: var(--mist);
+    }
+    
+    /* ═══════════════════════════════════════════
+       LIGHTBOX
+    ═══════════════════════════════════════════ */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(12, 12, 14, 0.95);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-md);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .lightbox.open {
+      display: flex;
+      opacity: 1;
+    }
+    
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+    
+    .lightbox-close {
+      position: absolute;
+      top: var(--space-md);
+      right: var(--space-md);
+      background: none;
+      border: none;
+      color: var(--frost);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 8px;
+    }
+    
+    /* ═══════════════════════════════════════════
+       ANIMATIONS
+    ═══════════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+    }
+    
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+    }
+    
+    .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.1s; }
+    .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.2s; }
+    .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.3s; }
+    .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.4s; }
+    .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.5s; }
+    .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.6s; }
+    
+    .reveal-stagger.visible > * {
+      opacity: 1;
+      transform: none;
+    }
+    
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      
+      .benefits-header { grid-template-columns: 1fr; gap: var(--space-sm); }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      
+      .service-block { grid-template-columns: 1fr; }
+      .service-block.reverse { direction: ltr; }
+      
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .process-header { grid-template-columns: 1fr; }
+      
+      .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
+      
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+      
+      .about-grid { grid-template-columns: 1fr; }
+      .about-images { aspect-ratio: 16/9; }
+      
+      .contact-grid { grid-template-columns: 1fr; }
+      
+      .footer-top { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+    }
+    
+    @media (max-width: 768px) {
+      .trust-strip { grid-template-columns: repeat(2, 1fr); }
+      .trust-item:nth-child(2) { border-right: none; }
+      
+      .benefits-grid { grid-template-columns: 1fr; }
+      
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      
+      .testimonials-grid { grid-template-columns: 1fr; }
+      
+      .service-specs { grid-template-columns: 1fr; }
+      
+      .contact-form-grid { grid-template-columns: 1fr; }
+      .contact-form-full { grid-column: span 1; }
+      
+      .form-grid { grid-template-columns: 1fr; }
+      .form-field.full { grid-column: span 1; }
+      
+      .wizard-steps { flex-wrap: wrap; gap: var(--space-sm); justify-content: center; }
+      .wizard-step-ind { font-size: 0.7rem; }
+      
+      .portfolio-header { flex-direction: column; align-items: flex-start; }
+      .portfolio-filters { flex-wrap: wrap; }
+      
+      .services-list-header { flex-direction: column; align-items: flex-start; }
+      
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: var(--space-xs); text-align: center; }
+      
+      .about-features { grid-template-columns: 1fr; }
+      
+      .finish-swatches { flex-wrap: wrap; }
+      
+      .map-container { aspect-ratio: 16/9; }
+      
+      .hero-scroll {
+        bottom: var(--space-sm);
+        gap: 12px;
+      }
+      
+      .hero-scroll-line {
+        height: 50px;
+      }
+      
+      .hero-scroll-text {
+        font-size: 0.6rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .trust-strip { grid-template-columns: 1fr; }
+      .trust-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      
+      .portfolio-grid { grid-template-columns: 1fr; }
+      
+      .service-cards { grid-template-columns: 1fr; }
+      
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+      
+      .process-steps { grid-template-columns: 1fr; }
+      
+      .clarity-slider-wrap { aspect-ratio: 4/3; }
+      
+      .hero-scroll {
+        bottom: var(--space-sm);
+        gap: 10px;
+      }
+      
+      .hero-scroll-line {
+        height: 35px;
+      }
+      
+      .hero-scroll-line::after {
+        height: 10px;
+      }
+      
+      .hero-scroll-arrow {
+        flex-direction: row;
+        gap: 2px;
+      }
+      
+      .hero-scroll-arrow span {
+        width: 6px;
+        height: 6px;
+        transform: rotate(-45deg);
+      }
+      
+      .hero-scroll-arrow span:nth-child(1) { animation-delay: 0s; }
+      .hero-scroll-arrow span:nth-child(2) { animation-delay: 0.1s; opacity: 0.5; }
+      .hero-scroll-arrow span:nth-child(3) { animation-delay: 0.2s; opacity: 0.3; }
+      
+      .hero-scroll-text {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+    <a href="#home" onclick="closeMobileMenu()">Home</a>
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#services" onclick="closeMobileMenu()">Services</a>
+    <a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="mainNav">
+    <a href="#home" class="nav-logo">
+      <img src="assets/images/logo.png" alt="Ignatious Glasswork Logo" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="openMobileMenu()" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="assets/images/hero.jpg" alt="Modern glass balustrade installation in luxury home" loading="eager">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="label hero-eyebrow">Precision · Craftsmanship · Clarity</span>
+      <h1 class="display-hero hero-title">
+        Glass that <em class="italic">disappears</em>.<br>
+        Architecture that <em class="italic">endures</em>.
+      </h1>
+      <p class="body-lg hero-body">
+        From frameless balustrades on luxury staircases to custom shower enclosures and aluminium window systems — we engineer spaces where the view is never interrupted.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get a Free Quote →</a>
+        <a href="#portfolio" class="btn-ghost">View Our Work</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      <div class="hero-scroll-arrow">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span class="hero-scroll-text">Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="trust-strip reveal">
+    <div class="trust-item">
+      <div class="trust-number">15+</div>
+      <div class="label trust-label">Years in Business</div>
+      <div class="trust-desc">A decade and a half of precision installations</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-number">250+</div>
+      <div class="label trust-label">Projects Delivered</div>
+      <div class="trust-desc">Residential and commercial across South Africa</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-number">4</div>
+      <div class="label trust-label">Core Specialisations</div>
+      <div class="trust-desc">Balustrades, showers, doors, and windows</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-number">24h</div>
+      <div class="label trust-label">Quote Turnaround</div>
+      <div class="trust-desc">Detailed, no-obligation estimates</div>
+    </div>
+  </section>
+
+  <!-- BENEFITS SECTION -->
+  <section class="benefits">
+    <div class="benefits-header">
+      <div class="benefits-title reveal">
+        <span class="label">Why Ignatious</span>
+        <h2 class="display-lg">Built on <em class="italic">precision</em></h2>
+      </div>
+      <div class="benefits-intro reveal">
+        <p class="body-lg">Every installation is custom-measured, precision-cut, and fitted by our specialist team. No standard sizing — ever.</p>
+      </div>
+    </div>
+    <div class="benefits-grid reveal-stagger">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 26L26 6M26 6H10M26 6V22"/>
+            <path d="M6 26L14 18"/>
+          </svg>
+        </div>
+        <h3 class="benefit-title">Custom Measured, Every Time</h3>
+        <p class="benefit-desc">No standard sizing. Every panel, door, and balustrade is measured on-site and fabricated specifically for your space.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="14" width="16" height="12" rx="2"/>
+            <path d="M11 14V10C11 7.23858 13.2386 5 16 5C18.7614 5 21 7.23858 21 10V14"/>
+            <circle cx="16" cy="20" r="2"/>
+          </svg>
+        </div>
+        <h3 class="benefit-title">Safety Certified</h3>
+        <p class="benefit-desc">All installations comply with SANS 10400 structural safety regulations using only certified toughened or laminated safety glass.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 4L8 18H16L14 28L24 14H16L18 4Z"/>
+          </svg>
+        </div>
+        <h3 class="benefit-title">Fast 24h Quotes</h3>
+        <p class="benefit-desc">Most residential projects are quoted within 24 hours and installed within 2–3 weeks of approval.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 4H22V12C22 17 19 20 16 20C13 20 10 17 10 12V4Z"/>
+            <path d="M10 7H6C6 10 8 12 10 12"/>
+            <path d="M22 7H26C26 10 24 12 22 12"/>
+            <path d="M16 20V24"/>
+            <path d="M12 28H20"/>
+          </svg>
+        </div>
+        <h3 class="benefit-title">10+ Years Experience</h3>
+        <p class="benefit-desc">A decade of installations on high-end residential and commercial builds across South Africa.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="16" r="10"/>
+            <circle cx="16" cy="16" r="4"/>
+            <path d="M16 6V10M16 22V26M6 16H10M22 16H26"/>
+          </svg>
+        </div>
+        <h3 class="benefit-title">Full Hardware Customisation</h3>
+        <p class="benefit-desc">Choose from matte black, chrome, brushed gold, or brushed steel hardware to perfectly complement your space.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 20L14 14L20 20"/>
+            <path d="M14 14L20 8L26 14"/>
+            <circle cx="8" cy="20" r="2"/>
+            <circle cx="26" cy="14" r="2"/>
+          </svg>
+        </div>
+        <h3 class="benefit-title">Direct With the Installer</h3>
+        <p class="benefit-desc">No middlemen. Work directly with our specialist team from the first measure to the final polish.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES LIST -->
+  <section class="services-list-section" id="services">
+    <div class="services-list-header reveal">
+      <div>
+        <span class="label">What We Do</span>
+        <h2 class="display-xl section-title-light">Our <em class="italic">Services</em></h2>
+      </div>
+      <p class="body-lg section-sub-light" style="max-width: 400px;">Precision-crafted glass and aluminium solutions for discerning homeowners across South Africa.</p>
+    </div>
+    <div class="services-list-items reveal">
+      <a href="#service-balustrades" class="service-list-item">
+        <div class="service-list-left">
+          <span class="service-list-num">01</span>
+          <span class="service-list-name">Frameless Balustrades</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:20px;">
+          <span class="service-list-tag">Staircases · Balconies · Pool Areas</span>
+          <div class="service-list-arrow">→</div>
+        </div>
+      </a>
+      <a href="#service-showers" class="service-list-item">
+        <div class="service-list-left">
+          <span class="service-list-num">02</span>
+          <span class="service-list-name">Custom Shower Enclosures</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:20px;">
+          <span class="service-list-tag">Frameless · Sliding · Pivot</span>
+          <div class="service-list-arrow">→</div>
+        </div>
+      </a>
+      <a href="#service-doors" class="service-list-item">
+        <div class="service-list-left">
+          <span class="service-list-num">03</span>
+          <span class="service-list-name">Glass Doors & Partitions</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:20px;">
+          <span class="service-list-tag">Stacker · Folding · Office Glass</span>
+          <div class="service-list-arrow">→</div>
+        </div>
+      </a>
+      <a href="#service-aluminium" class="service-list-item">
+        <div class="service-list-left">
+          <span class="service-list-num">04</span>
+          <span class="service-list-name">Aluminium Window Systems</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:20px;">
+          <span class="service-list-tag">Windows · Louvres · Sliding Doors</span>
+          <div class="service-list-arrow">→</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CLARITY SLIDER -->
+  <section class="clarity-section">
+    <div class="clarity-header reveal">
+      <span class="label">The Difference</span>
+      <h2 class="display-xl section-title">See the <em class="italic">transformation</em></h2>
+      <p class="body-lg section-sub">Drag the slider to reveal how a professional frameless installation transforms a space.</p>
+    </div>
+    <div class="clarity-slider-wrap" id="claritySlider">
+      <div class="clarity-before"></div>
+      <div class="clarity-after" id="clarityAfter"></div>
+      <div class="clarity-divider" id="clarityDivider"></div>
+      <div class="clarity-handle" id="clarityHandle">↔</div>
+    </div>
+    <div class="clarity-labels">
+      <span class="label">Before</span>
+      <span class="label">After</span>
+    </div>
+  </section>
+
+  <!-- SERVICE DETAIL PANELS -->
+  <section class="services-detail" id="service-balustrades">
+    <div class="service-block reveal">
+      <div class="service-img">
+        <img src="assets/images/balustrade-01.jpg" alt="Modern frameless glass balustrade on staircase" loading="lazy">
+        <div class="service-img-overlay"></div>
+      </div>
+      <div class="service-content" style="position:relative;">
+        <span class="service-bg-num">01</span>
+        <span class="label service-tag">Structural Safety · Open Views</span>
+        <h3 class="service-title">Frameless Glass Balustrades</h3>
+        <p class="service-desc">Top-rail-free systems, spigot-mounted panels, and curved installations for staircases, mezzanines, balconies, and pool surrounds. Safety without visual interruption.</p>
+        <div class="service-specs">
+          <div class="service-spec">10mm & 12mm Toughened Safety Glass</div>
+          <div class="service-spec">SANS 10400 Compliant Installations</div>
+          <div class="service-spec">Chrome, Matte Black & Brushed Steel</div>
+          <div class="service-spec">Indoor & Outdoor Rated Systems</div>
+        </div>
+        <a href="#contact" class="btn-primary">Request a Quote →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-detail" id="service-showers" style="padding-top:0;">
+    <div class="service-block reverse reveal">
+      <div class="service-img">
+        <img src="assets/images/shower-01.jpg" alt="Custom frameless shower enclosure with matte black hardware" loading="lazy">
+        <div class="service-img-overlay"></div>
+      </div>
+      <div class="service-content" style="position:relative;">
+        <span class="service-bg-num">02</span>
+        <span class="label service-tag">Bespoke Sizing · Hardware Finishes</span>
+        <h3 class="service-title">Custom Shower Enclosures</h3>
+        <p class="service-desc">Frameless pivot doors, sliding barn-door systems, and open walk-in showers. Measured and fabricated to the exact dimensions of your bathroom — no standard sizing.</p>
+        <div class="service-specs">
+          <div class="service-spec">8mm & 10mm Low-Iron Clear Glass</div>
+          <div class="service-spec">Matte Black, Chrome & Brushed Gold</div>
+          <div class="service-spec">Pivot, Sliding & Fixed Panels</div>
+          <div class="service-spec">Easy-Clean Nano Coating Available</div>
+        </div>
+        <a href="#contact" class="btn-primary">Request a Quote →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-detail" id="service-doors" style="padding-top:0;">
+    <div class="service-block reveal">
+      <div class="service-img">
+        <img src="assets/images/doors-01.jpg" alt="Modern glass sliding doors opening to outdoor space" loading="lazy">
+        <div class="service-img-overlay"></div>
+      </div>
+      <div class="service-content" style="position:relative;">
+        <span class="service-bg-num">03</span>
+        <span class="label service-tag">Indoor · Outdoor · Commercial</span>
+        <h3 class="service-title">Glass Doors & Partitions</h3>
+        <p class="service-desc">Full-height frameless sliding stacker doors, glass office partitions, and custom entry doors. Engineered to eliminate the boundary between inside and outside.</p>
+        <div class="service-specs">
+          <div class="service-spec">12mm–19mm Structural Glass</div>
+          <div class="service-spec">Stacker, Folding & Single Pivot Options</div>
+          <div class="service-spec">Bottom-Track & Top-Hung Systems</div>
+          <div class="service-spec">Residential & Commercial Grade</div>
+        </div>
+        <a href="#contact" class="btn-primary">Request a Quote →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-detail" id="service-aluminium" style="padding-top:0;">
+    <div class="service-block reverse reveal">
+      <div class="service-img">
+        <img src="assets/images/aluminium-01.jpg" alt="Modern aluminium window system in contemporary home" loading="lazy">
+        <div class="service-img-overlay"></div>
+      </div>
+      <div class="service-content" style="position:relative;">
+        <span class="service-bg-num">04</span>
+        <span class="label service-tag">Thermal · Structural · Durable</span>
+        <h3 class="service-title">Aluminium Window & Door Systems</h3>
+        <p class="service-desc">Slim-profile aluminium frames for fixed windows, louvres, casements, and sliding doors. Powder-coated in any RAL colour to match your architecture.</p>
+        <div class="service-specs">
+          <div class="service-spec">Thermally Broken Profiles Available</div>
+          <div class="service-spec">Custom RAL Powder Coating</div>
+          <div class="service-spec">Double & Triple Glazing Options</div>
+          <div class="service-spec">Residential, Commercial & Industrial</div>
+        </div>
+        <a href="#contact" class="btn-primary">Request a Quote →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS SECTION -->
+  <section class="process-section" id="process">
+    <div class="process-header reveal">
+      <div>
+        <span class="label">How It Works</span>
+        <h2 class="display-xl">From enquiry to <em class="italic">installation</em></h2>
+      </div>
+      <p class="body-lg section-sub">At Ignatious Glasswork we pride ourselves on a quick, reliable, and personal service. Here's exactly what to expect when you become a client.</p>
+    </div>
+    <div class="process-steps reveal-stagger">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <h3 class="process-title">Submit Enquiry</h3>
+        <p class="process-body">Fill in our quote form or call us directly with your project details.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <h3 class="process-title">We Call You Back</h3>
+        <p class="process-body">Our team responds within 24 hours to discuss your project and requirements.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <h3 class="process-title">Site Inspection</h3>
+        <p class="process-body">We visit your site to measure precisely and assess the installation conditions.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <h3 class="process-title">Finalise Quote</h3>
+        <p class="process-body">We deliver a detailed, no-obligation quote with full specifications and pricing.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">05</div>
+        <h3 class="process-title">Installation</h3>
+        <p class="process-body">Our specialist team installs your glass system with precision and care.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">06</div>
+        <h3 class="process-title">Final Check-In</h3>
+        <p class="process-body">We walk through the completed work with you to ensure everything is perfect.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="portfolio-header reveal">
+      <div>
+        <span class="label">Selected Work</span>
+        <h2 class="display-xl section-title-light">Our <em class="italic">Projects</em></h2>
+      </div>
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="balustrade">Balustrades</button>
+        <button class="filter-btn" data-filter="shower">Showers</button>
+        <button class="filter-btn" data-filter="doors">Doors & Glass</button>
+      </div>
+    </div>
+    <div class="portfolio-grid reveal-stagger" id="portfolioGrid">
+      <div class="portfolio-item" data-cat="balustrade" onclick="openLightbox(this)">
+        <img src="assets/images/portfolio-01.jpg" alt="Frameless balustrade on curved staircase" loading="lazy">
+        <div class="portfolio-overlay">
+          <span class="portfolio-tag">Balustrade</span>
+          <p class="portfolio-title">Curved Spiral Staircase</p>
+          <p class="portfolio-spec">10mm Clear · Top-Rail Free</p>
+        </div>
+      </div>
+      <div class="portfolio-item" data-cat="shower" onclick="openLightbox(this)">
+        <img src="assets/images/portfolio-02.jpg" alt="Custom frameless shower enclosure" loading="lazy">
+        <div class="portfolio-overlay">
+          <span class="portfolio-tag">Shower</span>
+          <p class="portfolio-title">Sliding Barn Door Shower</p>
+          <p class="portfolio-spec">10mm Glass · Matte Black Track</p>
+        </div>
+      </div>
+      <div class="portfolio-item" data-cat="doors" onclick="openLightbox(this)">
+        <img src="assets/images/portfolio-03.jpg" alt="Glass partition system in modern home" loading="lazy">
+        <div class="portfolio-overlay">
+          <span class="portfolio-tag">Glass Doors</span>
+          <p class="portfolio-title">Glass Wardrobe System</p>
+          <p class="portfolio-spec">12mm Structural · Black Hardware</p>
+        </div>
+      </div>
+      <div class="portfolio-item" data-cat="balustrade" onclick="openLightbox(this)">
+        <img src="assets/images/portfolio-04.jpg" alt="Residential exterior glass balustrade" loading="lazy">
+        <div class="portfolio-overlay">
+          <span class="portfolio-tag">Balustrade</span>
+          <p class="portfolio-title">Residential Exterior Balustrade</p>
+          <p class="portfolio-spec">12mm Glass · Spigot Mount</p>
+        </div>
+      </div>
+      <div class="portfolio-item" data-cat="shower" onclick="openLightbox(this)">
+        <img src="assets/images/portfolio-05.jpg" alt="Modern open shower enclosure" loading="lazy">
+        <div class="portfolio-overlay">
+          <span class="portfolio-tag">Shower</span>
+          <p class="portfolio-title">Open Double Shower Suite</p>
+          <p class="portfolio-spec">Matte Black Fixtures</p>
+        </div>
+      </div>
+      <div class="portfolio-item" data-cat="doors" onclick="openLightbox(this)">
+        <img src="assets/images/portfolio-06.jpg" alt="Frameless stacker patio doors" loading="lazy">
+        <div class="portfolio-overlay">
+          <span class="portfolio-tag">Glass Doors</span>
+          <p class="portfolio-title">Frameless Stacker Patio</p>
+          <p class="portfolio-spec">12mm Low-Iron · 6 Panel</p>
+        </div>
+      </div>
+      <div class="portfolio-item" data-cat="balustrade" onclick="openLightbox(this)">
+        <img src="assets/images/portfolio-07.jpg" alt="Feature staircase with glass balustrade" loading="lazy">
+        <div class="portfolio-overlay">
+          <span class="portfolio-tag">Balustrade</span>
+          <p class="portfolio-title">Feature Staircase</p>
+          <p class="portfolio-spec">10mm · Black Standoffs</p>
+        </div>
+      </div>
+      <div class="portfolio-item" data-cat="balustrade" onclick="openLightbox(this)">
+        <img src="assets/images/portfolio-08.jpg" alt="Interior mezzanine glass railing" loading="lazy">
+        <div class="portfolio-overlay">
+          <span class="portfolio-tag">Balustrade</span>
+          <p class="portfolio-title">Interior Mezzanine Railing</p>
+          <p class="portfolio-spec">10mm Toughened Glass</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="testimonials-bg"></div>
+    <div class="testimonials-header reveal">
+      <span class="label">Client Feedback</span>
+      <h2 class="display-xl section-title-light">Real results, <em class="italic">real clients</em></h2>
+    </div>
+    <div class="testimonials-grid reveal-stagger">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The frameless balustrade on our spiral staircase is absolutely stunning. The team measured everything perfectly and the installation was seamless. Our home looks completely transformed."</p>
+        <div class="testimonial-author">
+          <div>
+            <div class="testimonial-name">Thabo M.</div>
+            <div class="testimonial-role">Frameless Balustrade — Pretoria East</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"We had a custom shower enclosure fitted with matte black hardware. The quality is exceptional — it looks exactly like the renders we discussed. Professional from first contact to final walkthrough."</p>
+        <div class="testimonial-author">
+          <div>
+            <div class="testimonial-name">Lerato K.</div>
+            <div class="testimonial-role">Custom Shower Enclosure — Centurion</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The sliding glass stacker doors have completely opened up our entertainment area. On a good day, inside and outside become one space. Excellent workmanship and fair pricing."</p>
+        <div class="testimonial-author">
+          <div>
+            <div class="testimonial-name">Ryan v. W.</div>
+            <div class="testimonial-role">Glass Stacker Doors — Waterkloof</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section" id="about">
+    <div class="about-grid reveal">
+      <div class="about-images">
+        <img class="about-img-main" src="assets/images/about-main.jpg" alt="Premium glass installation in modern home" loading="lazy">
+        <img class="about-img-secondary" src="assets/images/about-secondary.jpg" alt="Close-up of frameless glass balustrade detail" loading="lazy">
+      </div>
+      <div class="about-content">
+        <span class="label">Our Story</span>
+        <h2 class="display-lg about-title">Crafting clarity, <em class="italic">one space at a time</em></h2>
+        <p class="body-lg about-body">
+          Founded on the principle that quality glasswork should be both an engineering achievement and an aesthetic statement, Ignatious Glasswork has spent over a decade transforming South African homes and commercial spaces.
+        </p>
+        <p class="body-lg about-body">
+          We believe in doing things properly — custom measuring every installation, using only SABS-certified materials, and treating each project as if it were our own home.
+        </p>
+        <div class="about-features">
+          <div class="about-feature">
+            <h4 class="about-feature-title">Direct Communication</h4>
+            <p class="about-feature-desc">No call centres, no middlemen. You speak directly with the people building your project.</p>
+          </div>
+          <div class="about-feature">
+            <h4 class="about-feature-title">Quality Assured</h4>
+            <p class="about-feature-desc">Every installation backed by our quality guarantee and SANS compliance documentation.</p>
+          </div>
+          <div class="about-feature">
+            <h4 class="about-feature-title">SANS Compliant</h4>
+            <p class="about-feature-desc">Full compliance with South African National Standards for structural glass installations.</p>
+          </div>
+          <div class="about-feature">
+            <h4 class="about-feature-title">Nationwide Service</h4>
+            <p class="about-feature-desc">Serving clients across Gauteng, Limpopo, Mpumalanga, and the Western Cape.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section" id="faq">
+    <div class="faq-header reveal">
+      <span class="label">Common Questions</span>
+      <h2 class="display-xl">Frequently <em class="italic">asked</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-question">Is it possible to install frameless glass railings without a top rail?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Yes — our spigot-mounted and channel-base systems are fully top-rail-free. The glass panels are structurally self-supporting and comply with SANS 10400 safety requirements. This gives you an uninterrupted view with zero visual obstruction at the top.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-question">What glass thickness do you use for balustrades and shower enclosures?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Balustrades are typically installed with 10mm or 12mm toughened safety glass depending on the span and load requirements. Shower enclosures use 8mm or 10mm low-iron clear glass. All glass is certified toughened or laminated safety glass.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-question">Do your installations meet South African building safety standards?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">All our structural glass installations comply with SANS 10400 (National Building Regulations) for glass in buildings. We use SABS-certified toughened safety glass throughout and can provide certification documentation upon request.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-question">Can railings be installed from the side of the slab or from above?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Both mounting options are available. Side-fix (fascia mount) and top-fix (core-drilled or surface-mounted spigots) are standard in our product range. The choice depends on your slab structure, aesthetic preference, and available fixing depth.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-question">What hardware finish options are available?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">We offer Chrome (polished stainless), Matte Black (powder-coated), Brushed Gold, and Brushed Stainless Steel. Hardware is matched across clamps, hinges, handles, and rail brackets for a cohesive look. Custom powder-coat colours can be arranged on request.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-question">How long does a typical installation take?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">A standard residential installation (balustrade or shower) typically takes 1–2 days once glass is fabricated. Larger projects with multiple systems are usually completed within a week. Lead time from approved quote to installation is typically 2–3 weeks.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="final-cta-bg"></div>
+    <div class="reveal">
+      <h2 class="display-xl">Ready to transform <em class="italic">your space</em>?</h2>
+      <p class="body-lg section-sub">Get in touch today for a no-obligation consultation and quote.</p>
+      <a href="https://wa.me/27691252171?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20glass%20project" target="_blank" class="btn-primary">Contact Us on WhatsApp →</a>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section" id="contact">
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <span class="label">Get In Touch</span>
+        <h2 class="display-lg section-title-light">Let's start <em class="italic">transforming</em></h2>
+        <p class="body-lg contact-desc">Contact us and get a customised solution tailored to your balustrade, shower, glass door, or window project.</p>
+        <div class="contact-rows">
+          <a href="https://wa.me/27691252171" target="_blank" class="contact-row contact-row-highlight">
+            <div class="contact-row-left">
+              <h4>WhatsApp Us</h4>
+              <p>+27 69 125 2171</p>
+            </div>
+            <div class="contact-row-icon contact-row-icon-highlight">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5C21 16.1944 16.9706 20 12 20C10.5 20 9.1 19.6 7.9 18.9L3 20L4.1 15.1C3.4 13.9 3 12.5 3 11.5C3 6.80558 7.02944 3 12 3C16.9706 3 21 6.80558 21 11.5Z"/>
+              <circle cx="12" cy="11" r="1"/>
+              <circle cx="16" cy="11" r="1"/>
+              <circle cx="8" cy="11" r="1"/>
+            </svg>
+          </div>
+          </a>
+          <a href="/cdn-cgi/l/email-protection#d5a6b4b9b0a695bcb2bbb4a1bcbaa0a6b2b9b4a6a6a2baa7befbb6bafbafb4" class="contact-row">
+            <div class="contact-row-left">
+              <h4>Email Enquiries</h4>
+              <p><span class="__cf_email__" data-cfemail="483b29242d3b08212f26293c21273d3b2f24293b3b3f273a23662b27663229">[email&#160;protected]</span></p>
+            </div>
+            <div class="contact-row-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 7L12 13L22 7"/>
+            </svg>
+          </div>
+          </a>
+          <a href="/cdn-cgi/l/email-protection#abc2ccc5cadfc2c4ded8ccc7cad8d8dcc4d9c0ebccc6cac2c785c8c4c6" class="contact-row">
+            <div class="contact-row-left">
+              <h4>Alternative Email</h4>
+              <p><span class="__cf_email__" data-cfemail="c7aea0a9a6b3aea8b2b4a0aba6b4b4b0a8b5ac87a0aaa6aeabe9a4a8aa">[email&#160;protected]</span></p>
+            </div>
+            <div class="contact-row-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 7L12 13L22 7"/>
+            </svg>
+          </div>
+          </a>
+          <div class="contact-row" style="cursor: default;">
+            <div class="contact-row-left">
+              <h4>Based In</h4>
+              <p>Midrand, Gauteng, South Africa</p>
+            </div>
+            <div class="contact-row-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z"/>
+              <circle cx="12" cy="9" r="3"/>
+            </svg>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3 class="contact-form-title">Send us a message</h3>
+        <form id="contactForm" class="contact-form-grid">
+          <div class="form-field">
+            <label class="form-label">Your Name</label>
+            <input type="text" id="cfName" class="form-input" placeholder="Full name" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" id="cfPhone" class="form-input" placeholder="+27 XX XXX XXXX">
+          </div>
+          <div class="form-field contact-form-full">
+            <label class="form-label">Email Address</label>
+            <input type="email" id="cfEmail" class="form-input" placeholder="email@example.com" required>
+          </div>
+          <div class="form-field contact-form-full">
+            <label class="form-label">Service Required</label>
+            <select id="cfService" class="form-select">
+              <option>Frameless Balustrades</option>
+              <option>Custom Shower Enclosure</option>
+              <option>Glass Doors & Partitions</option>
+              <option>Aluminium Window Systems</option>
+              <option>Multiple Services</option>
+            </select>
+          </div>
+          <div class="form-field contact-form-full">
+            <label class="form-label">Your Message</label>
+            <textarea id="cfMessage" class="form-textarea" placeholder="Tell us about your project, dimensions, or any questions you have…"></textarea>
+          </div>
+          <div class="contact-form-buttons">
+            <button type="button" class="btn-whatsapp" onclick="sendViaWhatsApp()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5C21 16.1944 16.9706 20 12 20C10.5 20 9.1 19.6 7.9 18.9L3 20L4.1 15.1C3.4 13.9 3 12.5 3 11.5C3 6.80558 7.02944 3 12 3C16.9706 3 21 6.80558 21 11.5Z"/>
+              </svg>
+              Send via WhatsApp
+            </button>
+            <button type="submit" class="btn-email" onclick="sendViaEmail(event)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="M2 7L12 13L22 7"/>
+              </svg>
+              Send via Email
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section class="map-section">
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.456234567890!2d28.12345678901234!3d-26.012345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDAwJzQ0LjQiUyAyOMKwMDcnMzQuMiJF!5e0!3m2!1sen!2sza!4v1234567890123" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Ignatious Glasswork Location">
+      </iframe>
+    </div>
+    <div style="text-align: center; padding: var(--space-sm);">
+      <p class="body-md" style="color: var(--steel);">
+        <svg style="vertical-align: middle; margin-right: 6px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z"/>
+          <circle cx="12" cy="9" r="3"/>
+        </svg>
+        4009 Pencil Fish Cres, Kaalfontein, Midrand, 1632, South Africa
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div>
+        <a href="#home" class="footer-logo" style="margin-bottom: var(--space-xs); display: inline-block;">
+          <img src="assets/images/logo.png" alt="Ignatious Glasswork" style="height: 44px; width: auto; object-fit: contain;">
+        </a>
+        <p class="footer-brand-about">Specialists in frameless glass balustrades, custom shower enclosures, glass doors, and aluminium window systems across South Africa.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="18" cy="6" r="1.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V4C20 2.89543 19.1046 2 18 2Z"/>
+              <path d="M12 8C14.2091 8 16 9.79086 16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8Z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/27691252171" target="_blank" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5C21 16.1944 16.9706 20 12 20C10.5 20 9.1 19.6 7.9 18.9L3 20L4.1 15.1C3.4 13.9 3 12.5 3 11.5C3 6.80558 7.02944 3 12 3C16.9706 3 21 6.80558 21 11.5Z"/>
+              <circle cx="12" cy="11" r="1"/>
+              <circle cx="16" cy="11" r="1"/>
+              <circle cx="8" cy="11" r="1"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#service-balustrades">Frameless Balustrades</a></li>
+          <li><a href="#service-showers">Custom Showers</a></li>
+          <li><a href="#service-doors">Glass Doors</a></li>
+          <li><a href="#service-aluminium">Aluminium Windows</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+27691252171">+27 69 125 2171</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#4f3c2e232a3c0f2628212e3b26203a3c28232e3c3c38203d24612c2061352e"><span class="__cf_email__" data-cfemail="4c3f2d20293f0c252b222d382523393f2b202d3f3f3b233e27622f2362362d">[email&#160;protected]</span></a></li>
+          <li><a href="#contact">4009 Pencil Fish Cres</a></li>
+          <li><a href="#contact">Kaalfontein, Midrand</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ignatious Glasswork. All rights reserved.</span>
+      <span class="powered-by">Powered By <strong>Thirty1</strong></span>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img src="" id="lightboxImg" alt="Portfolio image">
+  </div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // ═══════════════════════════════════════════
+    // LENIS SMOOTH SCROLL
+    // ═══════════════════════════════════════════
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // GSAP ScrollTrigger integration with Lenis
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0);
+
+    // ═══════════════════════════════════════════
+    // NAV SCROLL EFFECT
+    // ═══════════════════════════════════════════
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('mainNav');
+      if (window.scrollY > 80) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // ═══════════════════════════════════════════
+    // MOBILE MENU
+    // ═══════════════════════════════════════════
+    function openMobileMenu() {
+      document.getElementById('mobileMenu').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ═══════════════════════════════════════════
+    // SCROLL REVEAL
+    // ═══════════════════════════════════════════
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { 
+      threshold: 0.05,
+      rootMargin: '0px 0px -80px 0px'
+    });
+
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // ═══════════════════════════════════════════
+    // GSAP HERO PARALLAX
+    // ═══════════════════════════════════════════
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initial entrance animation for hero content
+    gsap.fromTo('.hero-eyebrow', 
+      { y: 30, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 1, delay: 0.3, ease: 'power3.out' }
+    );
+    
+    gsap.fromTo('.hero-title', 
+      { y: 50, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 1.2, delay: 0.5, ease: 'power3.out' }
+    );
+    
+    gsap.fromTo('.hero-body', 
+      { y: 30, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 1, delay: 0.7, ease: 'power3.out' }
+    );
+    
+    gsap.fromTo('.hero-actions', 
+      { y: 30, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 1, delay: 0.9, ease: 'power3.out' }
+    );
+    
+    gsap.fromTo('.hero-scroll', 
+      { y: 20, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 1, delay: 1.2, ease: 'power3.out' }
+    );
+
+    // Scroll-based parallax for hero
+    const heroParallax = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: '30% top',
+        scrub: 1.5
+      }
+    });
+
+    heroParallax
+      .from('.hero-content', { y: 80, opacity: 0.3 }, 0)
+      .from('.hero-bg img', { y: 15 }, 0)
+      .to('.hero-overlay', { opacity: 0.7 }, 0);
+
+    // Hide scroll indicator as user starts scrolling
+    gsap.to('.hero-scroll', {
+      scrollTrigger: {
+        trigger: '.hero',
+        start: '5% top',
+        end: '15% top',
+        scrub: 1
+      },
+      opacity: 0,
+      y: -20
+    });
+
+    // Service blocks parallax
+    gsap.utils.toArray('.service-block').forEach((block, i) => {
+      gsap.from(block.querySelector('.service-img'), {
+        scrollTrigger: {
+          trigger: block,
+          start: 'top 80%',
+          end: 'top 30%',
+          scrub: 1
+        },
+        y: 40,
+        opacity: 0.3
+      });
+    });
+
+    // ═══════════════════════════════════════════
+    // CLARITY SLIDER (Before/After)
+    // ═══════════════════════════════════════════
+    (function() {
+      const wrap = document.getElementById('claritySlider');
+      const after = document.getElementById('clarityAfter');
+      const divider = document.getElementById('clarityDivider');
+      const handle = document.getElementById('clarityHandle');
+      
+      let isDragging = false;
+
+      function setPosition(clientX) {
+        const rect = wrap.getBoundingClientRect();
+        let percentage = Math.max(0.03, Math.min(0.97, (clientX - rect.left) / rect.width));
+        
+        after.style.clipPath = `inset(0 ${((1 - percentage) * 100).toFixed(1)}% 0 0)`;
+        divider.style.left = handle.style.left = (percentage * 100).toFixed(1) + '%';
+      }
+
+      wrap.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        setPosition(e.clientX);
+      });
+
+      wrap.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        setPosition(e.touches[0].clientX);
+      }, { passive: true });
+
+      window.addEventListener('mousemove', (e) => {
+        if (isDragging) setPosition(e.clientX);
+      });
+
+      window.addEventListener('touchmove', (e) => {
+        if (isDragging) setPosition(e.touches[0].clientX);
+      }, { passive: true });
+
+      window.addEventListener('mouseup', () => isDragging = false);
+      window.addEventListener('touchend', () => isDragging = false);
+    })();
+
+    // ═══════════════════════════════════════════
+    // PORTFOLIO FILTER
+    // ═══════════════════════════════════════════
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+          if (filter === 'all' || item.dataset.cat === filter) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // ═══════════════════════════════════════════
+    // LIGHTBOX
+    // ═══════════════════════════════════════════
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      document.getElementById('lightboxImg').src = img.src;
+      document.getElementById('lightboxImg').alt = img.alt;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lenis.stop();
+    }
+
+    function closeLightbox(e) {
+      if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightbox').classList.remove('open');
+        document.body.style.overflow = '';
+        lenis.start();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // ═══════════════════════════════════════════
+    // FAQ ACCORDION
+    // ═══════════════════════════════════════════
+    function toggleFaq(trigger) {
+      const item = trigger.parentElement;
+      const isOpen = item.classList.contains('open');
+      
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    }
+
+    // ═══════════════════════════════════════════
+    // CONTACT FORM
+    // ═══════════════════════════════════════════
+    function getFormData() {
+      const name = document.getElementById('cfName').value;
+      const phone = document.getElementById('cfPhone').value;
+      const email = document.getElementById('cfEmail').value;
+      const service = document.getElementById('cfService').value;
+      const message = document.getElementById('cfMessage').value;
+      
+      return { name, phone, email, service, message };
+    }
+    
+    function sendViaWhatsApp() {
+      const { name, phone, email, service, message } = getFormData();
+      
+      if (!name || !email) {
+        alert('Please fill in your name and email address.');
+        return;
+      }
+      
+      const waMessage = `Hi, I'd like to request a quote for your services.
+
+*Name:* ${name}
+*Phone:* ${phone || 'Not provided'}
+*Email:* ${email}
+*Service Required:* ${service}
+*Message:* ${message || 'No additional details provided'}
+
+Please contact me with a quote. Thank you!`;
+      
+      const encodedMessage = encodeURIComponent(waMessage);
+      const whatsappURL = `https://wa.me/27691252171?text=${encodedMessage}`;
+      
+      window.open(whatsappURL, '_blank');
+    }
+    
+    function sendViaEmail(e) {
+      e.preventDefault();
+      
+      const { name, phone, email, service, message } = getFormData();
+      
+      if (!name || !email) {
+        alert('Please fill in your name and email address.');
+        return;
+      }
+      
+      const subject = `Quote Request - ${service}`;
+      const body = `Name: ${name}\nPhone: ${phone || 'Not provided'}\nEmail: ${email}\nService Required: ${service}\n\nMessage:\n${message || 'No additional details provided'}`;
+      
+      window.location.href = `mailto:sales@ignatiousglasswork.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    // ═══════════════════════════════════════════
+    // SMOOTH SCROLL FOR ANCHOR LINKS
+    // ═══════════════════════════════════════════
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          lenis.scrollTo(target, { offset: -80 });
+        }
+      });
+    });
+
+    // ═══════════════════════════════════════════
+    // LAZY LOAD IMAGES (Native)
+    // ═══════════════════════════════════════════
+    if ('loading' in HTMLImageElement.prototype) {
+      document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        img.src = img.dataset.src || img.src;
+      });
+    }
+  </script>
+</body>
+</html>
